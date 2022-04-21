@@ -1,0 +1,25 @@
+# Key advantages of using GitHub Actions for CI/CD pipelines
+- **CI/CD pipeline set-up is simple**: Không cần setup gì nhiều (webhooks, hardware, ...). Chỉ cần drop một file vào trong repo đang cần setup pipeline thì nó Git sẽ nhận diện được và work.
+- **Respond to any webhook on GitHub:**: Có thể setup event triggers để tự động hóa CICD Pipeline. Bao gồm PR, issues, comments, ...
+- **Community-powered, reusable workflows**: Có thể tự viết một workflows và public lên Github MarketPlace. 
+- **Support for any platform, any language, and any cloud**:
+
+# How to build a CI/CD pipeline with GitHub Actions
+- **Be clear about what a CI/CD pipeline is and should do**: 
+    + CI pipeline run khi code thay đổi, nên đảm bảo mọi thứ work ổn trước khi integrated.
+    + CD pipeline là bước cuối để deploy code đã build lên production.
+- **GitHub Actions takes a “choose-your-own adventure” type of approach to CI/CD**: Có thể tận dụng pre-built CI workflows có sẵn trên Github MarketPlace theo bất kỳ technology nào. Hoặc cũng có để tự build cho mình một CI workflow từ ddaauaf.
+
+##  Step 1: Create or choose a repository, and pick a project
+Có thể chọn một project có sẵn, fork bất kỳ project nào trên Github hoặc là bắt đầu từ đầu.
+## Step 2: Open GitHub Actions in your repository to start building your CI/CD workflow
+Chuyển sang Github Actions tab trong repo sau đó sẽ thấy một danh sách các workflow template đã có sẵn
+## Step 3: Make changes to your code to trigger your CI/CD pipeline
+## Step 4: Take a look at the workflow visualizer and live logs to get a full look into how your pipeline is running
+
+## REFERENES:
+https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/
+
+
+
+
