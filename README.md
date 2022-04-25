@@ -2,7 +2,7 @@
 - **CI/CD pipeline set-up is simple**: Không cần setup gì nhiều (webhooks, hardware, ...). Chỉ cần drop một file vào trong repo đang cần setup pipeline thì nó Git sẽ nhận diện được và work.
 - **Respond to any webhook on GitHub:**: Có thể setup event triggers để tự động hóa CICD Pipeline. Bao gồm PR, issues, comments, ...
 - **Community-powered, reusable workflows**: Có thể tự viết một workflows và public lên Github MarketPlace. 
-- **Support for any platform, any language, and any cloud**:
+- **Support for any platform, any language, and any cloud**
 
 # How to build a CI/CD pipeline with GitHub Actions
 - **Be clear about what a CI/CD pipeline is and should do**: 
@@ -21,5 +21,41 @@ Chuyển sang Github Actions tab trong repo sau đó sẽ thấy một danh sác
 https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/
 
 
+# YAML and GitHub Actions
+ - Gồm 3 thành phần: name, on, jobs
+    + name: Hiển thị name của workflow, nếu không có thì sẽ lấy tên của file
+    + on (required): Chỉ định event để tự động triggers workflow run.
+    + jobs: Chỉ định jobs nào được run
+        + job_id:
+            + run_on (required): Mỗi jobs là một virtual environment 
+            + steps: mỗi step là một tác vụ riêng lẻ để run commands line.
 
+## Overall Structure:
+```
+name: <name of your workflow>
 
+on: <event or list of events>
+jobs:
+  job_1:
+    name: <name of the first job>
+    runs-on: <type of machine to run the job on>
+    steps:
+      - name: <step 1>
+        run: |
+          <commands>
+      - name: <step 2>
+        run: |
+          <commands>
+  job_2:
+    name: <name of the second job>
+    runs-on: <type of machine to run the job on>
+    steps:
+      - name: <step 1>
+        run: |
+          <commands>
+      - name: <step 2>
+        run: |
+          <commands>
+```
+## REFERENCES:
+- https://hsf-training.github.io/hsf-training-cicd-github/05-understanding-yaml-and-ci/index.html=
